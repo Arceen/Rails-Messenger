@@ -2,6 +2,7 @@
 import "jquery"
 import "bootstrap"
 import "semantic-ui"
-$(document).ready(function(){
+import "@hotwired/turbo-rails"
+$(function(){
     $('.ui.dropdown').dropdown();
 });
