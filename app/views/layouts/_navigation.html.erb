@@ -9,11 +9,10 @@
     Account <i class="dropdown icon"></i>
     <div class="menu">
         <% if logged_in? %>
-            <%= link_to "Log Out", logout_path, data: { "turbo-method": :delete }, class: "item"%>
+            <%= link_to "Log Out", logout_path, data: { "turbo-method": :delete }, remote: true, class: "item"%>
         <% else %>
             <%= link_to "Log In", login_path, class: "item" %>
         <% end %>
-        <a class="item">Sign Up</a>
         
     </div>
     </div>

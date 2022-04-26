@@ -11,11 +11,7 @@
   </head>
 
   <body>
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
+    
     <div class="ui small inverted menu">
       <div class="ui container">
         <%= render 'layouts/navigation' %>
@@ -23,6 +19,7 @@
     </div>
 
     <div class ="ui container">
+      <%= render 'layouts/messages' %>
       <%= yield %>
     </div>
   </body>
