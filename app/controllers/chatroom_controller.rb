@@ -3,6 +3,10 @@ class ChatroomController < ApplicationController
         if !logged_in?
             redirect_to login_path
         end
-        @messages = Message.all
+
+        temp = User.all.select {|user_rest| user_rest.id != session[:user_id]}
+        session[:all_users] = temp.map {|x| {id: x.id, username: x.username}}
+            
+        @messages = Message.custom_display
     end
 end

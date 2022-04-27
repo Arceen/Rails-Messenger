@@ -6,15 +6,15 @@
 <div class = "ui two column grid">
     <div class = "twelve wide column">
         <div class = "ui fluid raised card chatbox">
-            <div class = "content">
-                <div class="ui feed">
+            <div class = "content" id = "messages">
+                <div id="message-container" class="ui feed">
                     <%= render @messages %>
                     
                 </div>
                 
             </div>
             <div class="extra content">
-                <%= form_for(:mossage, html: {class:"ui reply form", role:"form"}, url: message_path) do |f| %>
+                <%= form_for(:mossage, html: {class:"ui reply form", role:"form"}, url: message_path, remote: true) do |f| %>
                     <div class="field">
                         <div class="ui fluid icon input">
                             <%# <input type="text" placeholder="Enter a message..."> %>
@@ -32,14 +32,13 @@
             <div class="content">
                 <div class="ui inverted vertical menu">
                     <a class="active item">
-                        Home
+                        <%= session[:username]%>
                     </a>
-                    <a class="item">
-                        Messages
-                    </a>
-                    <a class="item">
-                        Friends
-                    </a>
+                    <% session[:all_users].each do |x| %>
+                        <a class="item">
+                            <%= x[:username] %>
+                        </a>
+                    <% end %>
                 </div>
             </div>
         </div>

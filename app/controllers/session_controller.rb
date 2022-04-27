@@ -13,6 +13,9 @@ class SessionController < ApplicationController
             user = user[0]
             p user
             session[:user_id] = user.id
+            session[:username] = user.username
+            temp = User.all.select {|user_rest| user_rest.username != user.username}
+            session[:all_users] = temp.map {|x| {id: x.id, username: x.username}}
             flash[:success] = "Logged In successfully"
             redirect_to root_path
         else
