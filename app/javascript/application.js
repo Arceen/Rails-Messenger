@@ -12,16 +12,16 @@ const scroll_bottom = function(){
 };
 
 let message_sent = function (){
-  $('#mossage_body').on('keydown', function(e){
-    if (e.key === 'Enter'){
-      console.log('comes here');
-      setTimeout(function(){
+  // $('#mossage_body').on('keydown', function(e){
+  //   if (e.key === 'Enter'){
+  //     console.log('comes here');
+  //     setTimeout(function(){
         
-      $('#mossage_body')[0].value = '';
-      },100);
-    };
+  //     $('#mossage_body')[0].value = '';
+  //     },100);
+  //   };
     
-  })
+  // })
     
 };
 
